@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "notification-service"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.2" 
+sqlmodel = "^0.0.21"
+aiokafka = "^0.11.0"
+psycopg2 = "^2.9.9"
+uvicorn = "^0.30.6"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+python-multipart = "^0.0.9"
+passlib = "^1.7.4"
+google = "^3.0.0"
+protobuf = "^5.28.0"
+twilio = "^9.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

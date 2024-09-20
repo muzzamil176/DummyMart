@@ -1,0 +1,17 @@
+from starlette.config import Config
+from starlette.datastructures import Secret
+
+try:
+    config = Config(".env")
+
+except FileNotFoundError:
+    config = Config()
+
+BOOTSTRAP_SERVER = config("KAFKA_SERVER", cast=str)
+KAFKA_ORDER_TOPIC = config("KAFKA_ORDER_TOPIC", cast=str)
+KAFKA_CONSUMER_GROUP_ID = config("KAFKA_CONSUMER_GROUP_ID", cast=str)
+DATABASE_URL=config("DATABASE_URL", cast= Secret)
+TEST_DATABASE_URL=config("TEST_DATABASE_URL",  cast= Secret)
+ACCOUNT_ID = config("ACCOUNT_ID",cast=Secret)
+AUTH_TOKEN = config("AUTH_TOKEN",cast=Secret)
+PHONE_NUMBER = config("PHONE_NUMBER",cast=Secret)
